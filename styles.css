@@ -10,6 +10,7 @@ html{
 
 .cuerpoIniciar{
     background-color: #3e3e22;
+    height: 500px;
 }
 
 .video1 {
@@ -42,7 +43,7 @@ body{
     line-height: 1.6em;
     color: #333;
     display: flex;
-    height: 100%;
+    min-height: 100%;
     flex-direction: column;
    
 }
