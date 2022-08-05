@@ -1,6 +1,6 @@
-alert("Bienvendios a TuAnotador!")
+/* alert("Bienvendios a TuAnotador!")
 alert("Ingresa un titulo y su respectivo contenido")
-alert("Luego presiona en agregar, y tendras tu nota guardada")
+alert("Luego presiona en agregar, y tendras tu nota guardada") */
 
 const fecha = Date.now();
 const hoy = new Date(fecha);
@@ -45,3 +45,7 @@ function crearNota(){
 }
 
 botonAgregar.addEventListener('click', crearNota)
+
+function eliminarNota(){
+    
+}
