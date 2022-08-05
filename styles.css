@@ -185,7 +185,7 @@ body{
 .errorPosible{
     display: flex;
     justify-content:start;
-    margin: 2px; 
+    font-size: 30px;
 }
 
 @media screen and (max-width: 497px){  

@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TuAnotador! - Franco Lelli</title>
+    <title>Iniciar Sesion - TuAnotador!</title>
     <meta name="description" content="Bienvendios a TuAnotador!. Aqui podras guardar todos tus mejores ideas.">
     <meta name="keywords" content="PROGRAMACION, CODIGO, HTML, CSS, JAVASCRIPT, FRANCO LELLI">
     <!--Link IcoFont-->
     <script src="https://kit.fontawesome.com/576ee62c68.js" crossorigin="anonymous"></script>
     <!--Link de Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
     <!--Link Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!--Link Font Awasome-->
@@ -19,58 +20,40 @@
     <!--Link CSS-->
     <link rel="stylesheet" href="./styles.css">
     <!--Link Script-->
-    <script defer src="./js/js.js"></script>
+    <script defer src="./js/js2.js"></script>
     <!--Icono Web-->
     <link rel="icon" href="./img/book.png">
 </head>
-<body>
+<body class="cuerpoIniciar">
     <header>
-        
         <div class="container1">
             <div class="todo_container  blur-in">
-                <a href="./iniciar_sesion.html">
+                <a href="./index.html">
                     <i class="large material-icons logo">book</i>
                 </a>
                 <div class="texto">
-                    <h1 class="titulo">TuAnotador!</h1>
-                    <h2 class="subtitulo">Las mejores ideas salen de aquí</h2>
+                    <h1 class="titulo2">TuAnotador!</h1>
+                    <h2 class="subtitulo2">Las mejores ideas salen de aquí</h2>
                 </div>
             </div>
             
         </div>
     </header>
-    <main>
-        <div class="main">
+    <main class="iniciar_sesion blur-in">
+        <div class="texto">
+            <h2 class="titulo3">Iniciar Sesion</h2>
+            <h3 class="color">(usuario y contraseña: prueba)</h3>
             <div class="mb-3 textoPrinc">
-                <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-center">Nota</label>
-                <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-start m-2">Titulo:</label>
-                <textarea class="form-control" id="tituloNota" rows="1"></textarea>
-                <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-start m-2">Contenido:</label>
-                <textarea class="form-control" id="contenidoNota" rows="4"></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-start m-2">Usuario:</label>
+                <input type="text" class="form-control botton" id="email">
+                <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-start m-2">Contraseña:</label>
+                <input type="password" class="form-control botton" id="password">
+                
                 <div class="boton  blur-in">
-                    <button type="button" class="btn btn-warning" id="btnAgregar">Agregar</button>
+                    <button type="button" class="btn btn-outline-dark m-2" id="btnIniciar">Iniciar Sesion</button>
                 </div>
             </div>
-
-            <div class="mb-3 textoPrinc">
-                <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-center">Tus notas</label>
-                <div id="notas">
-                    <div class="card mb-3" id="nuevoElemento ">
-                        <div class="card-header">
-                        Nota 1
-                        </div>
-                        <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p>A well-known quote, contained in a blockquote element.</p>
-                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                        </blockquote>
-                        </div>
-                        <div class="boton  blur-in">
-                            <button type="button" class="btn btn-danger" onclick="">Eliminar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <label for="" class="form-label errorEscondido" id="posibleError">Usuario o contraseña incorrecta</label>
         </div>
     </main>
     <footer class="footere">
@@ -86,7 +69,11 @@
             </p>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>   
+    <section class="containerV">
+        <div class="video-container">
+            <video class="video1" src="./book.mp4" autoplay muted loop></video>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
 </body>
 </html>

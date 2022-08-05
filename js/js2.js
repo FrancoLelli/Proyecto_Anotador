@@ -16,7 +16,7 @@ function validar(){
     }else{
         posibleError.classList.add("errorEscondido")
         posibleError.classList.remove("errorPosible")
-        location.href = "./index.html"
+        location.href = "./menu.html"
     }
 }
 
