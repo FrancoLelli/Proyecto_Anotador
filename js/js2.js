@@ -20,4 +20,9 @@ function validar(){
     }
 }
 
+document.addEventListener('keypress', (e) =>{
+    if(e.key == 'Enter'){
+        validar()
+    }
+})
 botonIniciar.addEventListener('click', validar)
