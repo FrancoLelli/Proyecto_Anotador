@@ -25,24 +25,22 @@
 </head>
 <body>
     <header>
-        
         <div class="container1">
             <div class="todo_container  blur-in">
-                <a href="./index.html">
-                    <i class="large material-icons logo">book</i>
-                </a>
                 <div class="texto">
                     <h1 class="titulo">TuAnotador!</h1>
                     <h2 class="subtitulo">Las mejores ideas salen de aquí</h2>
                 </div>
             </div>
-            
-        </div>
+                <div class="d-grid d-md-flex justify-content-md-end m-2">
+                    <a href="./index.html"><button class="btn btn-sm btn-danger me-md-2" type="button">Cerrar Sesion</button></a>
+                  </div>
+        </div> 
     </header>
     <main>
         <div class="main">
             <div class="mb-3 textoPrinc">
-                <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-center">Nota</label>
+                <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-center" id="nombreSesion"></label>
                 <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-start m-2">Titulo:</label>
                 <textarea class="form-control" id="tituloNota" rows="1"></textarea>
                 <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-start m-2">Contenido:</label>
@@ -55,7 +53,7 @@
             <div class="mb-3 textoPrinc">
                 <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-center">Tus notas</label>
                 <div id="notas">
-                    <div class="card mb-3" id="nuevoElemento ">
+                    <div class="card mb-3" id=1>
                         <div class="card-header">
                         Nota 1
                         </div>
@@ -64,11 +62,21 @@
                             <p>A well-known quote, contained in a blockquote element.</p>
                             <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
                         </blockquote>
-                        </div>
                         <div class="boton  blur-in">
-                            <button type="button" class="btn btn-danger" onclick="">Eliminar</button>
+                            <button type="button" class="botones btn btn-sm btn-danger">Eliminar</button>
+                        </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal-container" class="modal-container">
+            <div id="my-modal" class="my-modal">
+                <h3>Quieres eliminar la nota?</h3>
+                <hr>
+                <div>
+                    <button id="eliminarNota" class="btn btn-danger">Eliminar</button>
+                    <button id="cerrarModal" class="btn btn-danger">Volver</button>
                 </div>
             </div>
         </div>

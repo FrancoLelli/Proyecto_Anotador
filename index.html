@@ -42,7 +42,6 @@
     <main class="iniciar_sesion blur-in">
         <div class="texto">
             <h2 class="titulo3">Iniciar Sesion</h2>
-            <h3 class="color">(usuario y contraseña: prueba)</h3>
             <div class="mb-3 textoPrinc">
                 <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-start m-2">Usuario:</label>
                 <input type="text" class="form-control botton" id="email">
@@ -50,10 +49,23 @@
                 <input type="password" class="form-control botton" id="password">
                 
                 <div class="boton  blur-in">
+                    <button type="button" class="btn btn-outline-dark m-2" id="btnCrear">Crear usuario</button>
                     <button type="button" class="btn btn-outline-dark m-2" id="btnIniciar">Iniciar Sesion</button>
                 </div>
             </div>
             <label for="" class="form-label errorEscondido" id="posibleError">Usuario o contraseña incorrecta</label>
+        </div>
+        <div id="modal-container" class="modal-container">
+            <div id="my-modal" class="my-modal">
+                <h3>Bienvenido</h3>
+                <hr>
+                <p>En primer lugar, ingresar los datos. En caso que ya estes registrado, presionar en Iniciar Sesion.
+                    Caso contrario, ingresar los datos, luego, clickear sobre Crear Usuario, y finalmente, presionar en Iniciar sesion.
+                </p>
+                <div>
+                    <button id="entendidoBtn" class="btn btn-success">Entendido</button>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="footere">
