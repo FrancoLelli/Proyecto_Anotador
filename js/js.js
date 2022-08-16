@@ -12,6 +12,7 @@ let id= 1
 
 const botonAgregar = document.getElementById("btnAgregar")
 let usuarios = JSON.parse(localStorage.getItem('usuarios'));
+console.log(usuarios)
 
 const botonEliminar = document.getElementById("eliminarBtn")
 const modalContainer = document.querySelector('#modal-container')

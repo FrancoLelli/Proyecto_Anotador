@@ -7,8 +7,10 @@ const cerrarModal = document.getElementById('entendidoBtn')
 cerrarModal.onclick = () =>{
     modalContainer.classList.remove('my-modal-activo');
 }
+
 class Persona{
-    constructor(nombre, contrasenia){
+    constructor(id, nombre, contrasenia){
+        id = this.id
         nombre = this.nombre
         contrasenia = this.contrasenia
     }
@@ -25,10 +27,14 @@ function returnLista(){
     return usuarios
 }
 
+let numeroId = 0
+
 function agregar_A_Lista(){
+    numeroId++
     let lista = returnLista()
     lista.push(
         {
+            id: numeroId,
             nombre: document.getElementById("email").value,
             contrasenia: document.getElementById("password").value
         }
