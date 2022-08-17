@@ -17,14 +17,18 @@ class Persona{
 }
 
 function returnLista(){
-    let usuarios = localStorage.getItem('usuarios');
+   /*  let usuarios = localStorage.getItem('usuarios');
     if(!usuarios){
         usuarios = []
     }else{
         usuarios = JSON.parse(localStorage.getItem('usuarios'));
     }
     console.log(usuarios);
+    return usuarios */ 
+
+    let usuarios = (localStorage.getItem('usuarios')) ? JSON.parse(localStorage.getItem('usuarios')) : []
     return usuarios
+    
 }
 
 let numeroId = 0
@@ -41,7 +45,6 @@ function agregar_A_Lista(){
     ); 
 
     localStorage.setItem('usuarios', JSON.stringify(lista))
-    console.log(lista);
 }
 
 
@@ -70,9 +73,11 @@ function validar(){
 }
 
 document.addEventListener('keypress', (e) =>{
-    if(e.key == 'Enter'){
+    /* if(e.key == 'Enter'){
         validar()
-    }
+    } */
+
+    e.key == 'Enter' ? validar() : null
 })
 
 botonCrear.addEventListener('click', agregar_A_Lista) 
