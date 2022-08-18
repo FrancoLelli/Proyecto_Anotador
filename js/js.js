@@ -68,6 +68,22 @@ function crearNota(){
         notaModal.onclick = () =>{
             modalContainer.classList.remove('my-modal-activo')
             eliminarNota(divNotas.getAttribute('id'))
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'success',
+                title: 'Nota eliminada correctamente'
+              })
         }
     }
     
@@ -75,7 +91,25 @@ function crearNota(){
     resetearTextArea()
 }
 
-botonAgregar.addEventListener('click', crearNota)
+botonAgregar.addEventListener('click', () => {
+    crearNota()
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Nota agregada correctamente'
+      })
+})
 
 
 function eliminarNota(id){
@@ -87,3 +121,19 @@ function resetearTextArea(){
     document.getElementById("contenidoNota").value = '';
 }
 
+btnCerrarSes = document.getElementById("cerrarSesion")
+btnCerrarSes.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Estas seguro que quieres cerrar sesion?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Volver',
+        confirmButtonText: 'Cerrar Sesion'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            location.href = "./index.html"
+        }
+      })
+})
