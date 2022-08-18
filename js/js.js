@@ -32,6 +32,8 @@ class Nota{
 
 function crearNota(){
     id++
+    inputTitulo = document.getElementById("tituloNota")
+    inputCont = document.getElementById("contenidoNota")
     tituloNota = document.getElementById("tituloNota").value
     contenidoNota = document.getElementById("contenidoNota").value
     notas.push({
@@ -68,8 +70,9 @@ function crearNota(){
             eliminarNota(divNotas.getAttribute('id'))
         }
     }
-
+    
     cardNotas.append(divNotas)
+    resetearTextArea()
 }
 
 botonAgregar.addEventListener('click', crearNota)
@@ -79,4 +82,8 @@ function eliminarNota(id){
     document.getElementById(id).remove()
 }
 
+function resetearTextArea(){
+    document.getElementById("tituloNota").value='';
+    document.getElementById("contenidoNota").value = '';
+}
 
