@@ -92,6 +92,24 @@ body{
     display: flex;
 }
 
+.botonN{
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+.botonN:hover{
+    transition: 1s;
+    color: red;
+}
+
+.boton2{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .texto{
     margin: 0px 5px;
     display: flex;
@@ -151,7 +169,7 @@ body{
 .boton{
     margin: 10px 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 

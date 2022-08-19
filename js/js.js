@@ -2,10 +2,18 @@
 alert("Ingresa un titulo y su respectivo contenido")
 alert("Luego presiona en agregar, y tendras tu nota guardada") */
 
-const fecha = Date.now();
+ const fecha = Date.now();
 const hoy = new Date(fecha);
-const fechaActual = hoy.toLocaleDateString()
+const fechaActual = hoy.toLocaleDateString() 
 
+/* Fechas 
+
+const fechaActual = DateTime.now()
+fechaActual.setLocale('en').toLocaleString(DateTime.DATE_FULL)
+
+*/
+
+/* Funciones notas */
 notas=[]
 
 let id= 1
@@ -91,6 +99,33 @@ function crearNota(){
     resetearTextArea()
 }
 
+/* Reconocimiento de voz */
+texto = document.getElementById("contenidoNota")
+const btnStop = document.getElementById("btnStop")
+const btnMicro = document.getElementById("btnMicro")
+let recognition = new webkitSpeechRecognition()
+recognition.lang = 'es-ES'
+recognition.continuous = true 
+/* recognition.interimResults = false  */
+
+recognition.onresult = (event) => {
+  const results = event.results
+  const frase = results[results.length - 1][0].transcript
+  texto.value += frase
+}
+
+btnMicro.addEventListener('click', () => {
+  recognition.start()
+})
+
+btnStop.addEventListener('click', () => {
+  recognition.abort()
+})
+
+
+
+/*  */
+
 botonAgregar.addEventListener('click', () => {
     crearNota()
     const Toast = Swal.mixin({
@@ -108,7 +143,7 @@ botonAgregar.addEventListener('click', () => {
       Toast.fire({
         icon: 'success',
         title: 'Nota agregada correctamente'
-      })
+      }) 
 })
 
 

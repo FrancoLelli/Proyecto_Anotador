@@ -24,6 +24,11 @@
     <link rel="icon" href="./img/book.png">
     <!-- Link Sweet Alert 2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Link Tostify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Link Luxon -->
+    <script src="luxon.js"></script>
 </head>
 <body>
     <header>
@@ -48,7 +53,10 @@
                 <label for="exampleFormControlTextarea1" class="form-label d-flex justify-content-start m-2">Contenido:</label>
                 <textarea class="form-control" id="contenidoNota" rows="4"></textarea>
                 <div class="boton  blur-in">
+                    <div></div>
                     <button type="button" class="btn btn-warning" id="btnAgregar">Agregar</button>
+                    <a class="botonN" id="btnMicro"><i class="large material-icons logo2">mic</i></a>
+                    <a class="botonN" id="btnStop"><i class="large material-icons logo2">close</i></a>
                 </div>
             </div>
 
