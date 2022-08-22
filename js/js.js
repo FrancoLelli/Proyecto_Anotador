@@ -42,11 +42,6 @@ class Nota{
 
 
 function crearNota(){
-  if(usuarioNom){
-
-  }else{
-
-  }
     id++
     inputTitulo = document.getElementById("tituloNota")
     inputCont = document.getElementById("contenidoNota")
