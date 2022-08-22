@@ -17,18 +17,8 @@ class Persona{
 }
 
 function returnLista(){
-   /*  let usuarios = localStorage.getItem('usuarios');
-    if(!usuarios){
-        usuarios = []
-    }else{
-        usuarios = JSON.parse(localStorage.getItem('usuarios'));
-    }
-    console.log(usuarios);
-    return usuarios */ 
-
     let usuarios = (localStorage.getItem('usuarios')) ? JSON.parse(localStorage.getItem('usuarios')) : []
     return usuarios
-    
 }
 
 let numeroId = 0
@@ -57,7 +47,8 @@ function validar(){
     const nombre = document.getElementById("email").value
     const password = document.getElementById("password").value
 
-    const recorrertData = usuariosLocal.some(usuario => nombre === usuario.nombre && password === usuario.contrasenia)
+    const recorrertData = usuariosLocal.find(usuario => nombre === usuario.nombre && password === usuario.contrasenia)
+    console.log(recorrertData)
 
     if(recorrertData){
         posibleError.classList.add("errorEscondido")
@@ -72,13 +63,9 @@ function validar(){
 
 }
 
-document.addEventListener('keypress', (e) =>{
-    /* if(e.key == 'Enter'){
-        validar()
-    } */
-
+/* document.addEventListener('keypress', (e) =>{
     e.key == 'Enter' ? validar() : null
 })
-
+ */
 botonCrear.addEventListener('click', agregar_A_Lista) 
 botonIniciar.addEventListener('click', validar) 

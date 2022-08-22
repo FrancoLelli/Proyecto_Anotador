@@ -9,8 +9,6 @@ var f = {month: 'long', day: 'numeric'}
 
  var fechaActual = fechaActual1.setLocale('es').toLocaleString(f)
 
-console.log(fechaActual)
-
 /* Funciones notas */
 
 notas=[]
@@ -24,6 +22,10 @@ const botonEliminar = document.getElementById("eliminarBtn")
 const modalContainer = document.querySelector('#modal-container')
 const notaModal = document.getElementById('eliminarNota')
 const cerrarModal = document.getElementById('cerrarModal')
+const modalContainer2 = document.getElementById('modal-container1')
+const notaModal1 = document.getElementById('eliminarNota1')
+const cerrarModal1 = document.getElementById('cerrarModal1')
+
 
 
 
@@ -64,6 +66,37 @@ function crearNota(){
                             </div>`
 
     const botonRemove = document.createElement('div')
+    const botonEditar = document.createElement('div')
+    botonEditar.classList.add('boton', 'blur-in')
+    botonEditar.innerHTML = `<button type="button" class="btn btn-sm btn-danger" id="${id}">Editar</button>`
+    divNotas.appendChild(botonEditar)
+    botonEditar.onclick = function(){
+      modalContainer2.classList.add('my-modal-activo');
+      cerrarModal1.onclick = () =>{
+          modalContainer2.classList.remove('my-modal-activo')
+      }
+      notaModal1.onclick = () =>{
+          modalContainer2.classList.remove('my-modal-activo')
+          editarNota(divNotas.getAttribute('id'))
+          const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 2000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+            
+            Toast.fire({
+              icon: 'success',
+              title: 'Editar nota'
+            })
+      }
+  }
+
     botonRemove.classList.add('boton', 'blur-in')
     botonRemove.innerHTML = `<button type="button" class="btn btn-sm btn-danger" id="${id}">Eliminar</button>`
     divNotas.appendChild(botonRemove)
@@ -167,3 +200,12 @@ btnCerrarSes.addEventListener('click', () => {
         }
       })
 })
+
+function editarNota(id){
+  console.log(notas)
+  const indiceArray = notas.find((nota) => id == nota.id)
+  document.getElementById("tituloNota").value= indiceArray.titulo;
+  document.getElementById("contenidoNota").value = indiceArray.contenido;
+  eliminarNota(id)
+} 
+
