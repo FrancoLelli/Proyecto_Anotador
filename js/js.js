@@ -1,4 +1,6 @@
-
+let usNom = localStorage.getItem('id_usu').toUpperCase()
+let nom = document.getElementById('name')
+nom.innerHTML +=  `${usNom}`
  /* Fechas  */
 
 const { DateTime } = luxon
@@ -40,6 +42,11 @@ class Nota{
 
 
 function crearNota(){
+  if(usuarioNom){
+
+  }else{
+
+  }
     id++
     inputTitulo = document.getElementById("tituloNota")
     inputCont = document.getElementById("contenidoNota")

@@ -52,9 +52,9 @@ body{
     background: #b0936d;
     padding: 2rem 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    width: 100%;
 
 }
 
@@ -81,6 +81,12 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.nombreCuenta{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 3px;
 }
 
 .my-modal-activo{
@@ -235,6 +241,16 @@ body{
     display: flex;
     justify-content:start;
     font-size: 30px;
+}
+
+@media screen and (max-width: 680px){  
+    .container1{
+        flex-direction: column;
+    }
+
+    .nombreCuenta{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 497px){  

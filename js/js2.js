@@ -10,6 +10,7 @@ cerrarModal.onclick = () =>{
 
 class Persona{
     constructor(id, nombre, contrasenia){
+
         id = this.id
         nombre = this.nombre
         contrasenia = this.contrasenia
@@ -51,6 +52,7 @@ function validar(){
     console.log(recorrertData)
 
     if(recorrertData){
+        localStorage.setItem('id_usu', recorrertData.nombre)
         posibleError.classList.add("errorEscondido")
         posibleError.classList.remove("errorPosible")
         location.href = "./menu.html"
