@@ -1,19 +1,18 @@
-/* alert("Bienvendios a TuAnotador!")
-alert("Ingresa un titulo y su respectivo contenido")
-alert("Luego presiona en agregar, y tendras tu nota guardada") */
 
- const fecha = Date.now();
-const hoy = new Date(fecha);
-const fechaActual = hoy.toLocaleDateString() 
+ /* Fechas  */
 
-/* Fechas 
+const { DateTime } = luxon
 
-const fechaActual = DateTime.now()
-fechaActual.setLocale('en').toLocaleString(DateTime.DATE_FULL)
+var fechaActual1 = DateTime.now()
 
-*/
+var f = {month: 'long', day: 'numeric'}
+
+ var fechaActual = fechaActual1.setLocale('es').toLocaleString(f)
+
+console.log(fechaActual)
 
 /* Funciones notas */
+
 notas=[]
 
 let id= 1
@@ -101,7 +100,6 @@ function crearNota(){
 
 /* Reconocimiento de voz */
 texto = document.getElementById("contenidoNota")
-const btnStop = document.getElementById("btnStop")
 const btnMicro = document.getElementById("btnMicro")
 let recognition = new webkitSpeechRecognition()
 recognition.lang = 'es-ES'
@@ -118,9 +116,6 @@ btnMicro.addEventListener('click', () => {
   recognition.start()
 })
 
-btnStop.addEventListener('click', () => {
-  recognition.abort()
-})
 
 
 
