@@ -1,8 +1,35 @@
+/* API  */
+
+fetch('https://strangerthings-quotes.vercel.app/api/quotes/2')
+.then((response) => response.json())
+.then((frases) => frases.forEach(frase => {
+  const cardNotas1 = document.getElementById("notas");
+  const divNotas2 = document.createElement('div');
+  divNotas2.className = "card mb-3";
+  divNotas2.innerHTML = `<div class="card-header">
+                          ${frase.author}
+                          </div>
+                          <div class="card-body">
+                          <blockquote class="blockquote mb-0">
+                              <p>${frase.quote}</p>
+                              <footer class="blockquote-footer">From: <cite title="">Stranger Things</cite></footer>
+                          </blockquote>
+                        </div>`
+
+  cardNotas1.append(divNotas2) 
+  }
+ )
+)
+
+.catch((err) => console.log(err)) 
+
+/* Nombre de usuario */
 let usNom = localStorage.getItem('id_usu').toUpperCase()
 let nom = document.getElementById('name')
 nom.innerHTML +=  `${usNom}`
- /* Fechas  */
 
+
+ /* Fechas  */
 const { DateTime } = luxon
 
 var fechaActual1 = DateTime.now()
