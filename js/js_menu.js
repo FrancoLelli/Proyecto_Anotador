@@ -24,8 +24,11 @@ fetch('https://strangerthings-quotes.vercel.app/api/quotes/2')
 .catch((err) => console.log(err)) 
 
 /* Nombre de usuario */
+
 let usNom = localStorage.getItem('id_usu').toUpperCase()
+
 let nom = document.getElementById('name')
+
 nom.innerHTML +=  `${usNom}`
 
 
@@ -166,7 +169,6 @@ const btnMicro = document.getElementById("btnMicro")
 let recognition = new webkitSpeechRecognition()
 recognition.lang = 'es-ES'
 recognition.continuous = true 
-/* recognition.interimResults = false  */
 
 recognition.onresult = (event) => {
   const results = event.results
